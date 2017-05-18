@@ -1,0 +1,255 @@
+/* Style Sheet for Atropos */
+/* Author Dustin Clark 2017*/
+
+/*
+------------------------------- Resets and presets 
+*/
+
+*, 
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Josefin Slab', serif;
+}
+
+button, input, a, textarea { outline: none;}
+
+body, html {
+	height: 100%;
+	background-color: #5f6d48;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	text-align: center;
+	background-color: #28383a;
+	color: #e9e9e9;
+	padding: 10px 0;
+	border-radius: 10px;
+}
+
+/*
+------------------------------- info/ icons
+*/
+
+.icons {
+	position: fixed;
+	z-index: 2;
+}
+
+.info-icon {
+	height: 35px;
+	width: 35px;
+	padding: 5px;
+	fill: #e9e9e9;
+}
+
+.close-icon {
+	height: 35px;
+	width: 35px;
+	padding: 5px;
+	fill: #e9e9e9;
+	display: none;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	min-height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #e9e9e9;
+	padding: 30px;
+	z-index: 1;
+}
+
+.legend {
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+/*
+------------------------------- hero
+*/
+
+.skew {
+	background-color: #0e0f0c;
+	transform:skew(0deg, -3deg);
+	margin-bottom: 50px;
+	transition: height 1s;
+}
+
+.hero {
+	background-color: #0e0f0c;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transform:skew(0deg, 3deg);
+	height: 70%;
+}
+
+.hero h1, .hero p {
+	font-family: 'Inknut Antiqua', serif;
+	color: #e9e9e9;
+}
+
+/*
+------------------------------- question
+*/
+
+.question-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.question-container * {
+	margin: 5px 0;
+}
+
+.question-container p {
+	font-size: 24px;
+}
+
+input {
+	padding-left: 10px;
+}
+
+button {
+	border: none;
+}
+
+/*
+------------------------------- answer
+*/
+
+.answer-container {
+	width: 100%;
+	padding: 15px 0;
+	display: none;
+}
+
+.message {
+	text-align: center;
+	color: #0e0f0c;
+}
+
+.blocks {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	margin-bottom: 15px;
+}
+
+.lived {
+	background-color: #1a1e17;
+}
+
+.left {
+	background-color: #414e3a;
+}
+
+.answer-container a {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+}
+
+/*
+------------------------------- media queries
+*/
+
+@media (min-width: 0px) {
+	
+	.overlay p {
+		margin: 15px 0;
+		font-size: 16px;
+	}
+
+	.legend p {
+		padding: 15px 0;
+		font-size: 20px;
+	}
+	
+	.hero h1 {
+		font-size: 2rem;
+		margin-bottom: -20px;
+	}
+	
+	.hero p {
+		font-size: .7rem;
+	}
+	
+	.box {
+		height: 50px;
+		width: 50px;
+		margin: 5px;
+	}
+	
+	.skew {
+		height: 50%;
+	}
+	
+	input, button {
+		width: 50%;
+		font-size: 36px;
+		border-radius: 10px;
+	}
+	
+	.message {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+}
+
+@media (min-width: 768px) {
+	.overlay p {
+		margin: 20px 0;
+		font-size: 20px;
+	}
+
+	.legend p {
+		padding: 15px 0;
+		font-size: 30px;
+	}
+	
+	.legend {
+		width: 60%;
+	}
+	
+	.hero h1 {
+		font-size: 5rem;
+		margin-bottom: -50px;
+	}
+	
+	.box {
+		height: 100px;
+		width: 100px;
+		margin: 10px;
+	}
+	
+	.skew {
+		height: 60%;
+	}
+	
+	input, button {
+		width: 25%;
+	}
+	
+	.message {
+		font-size: 2rem;
+		font-weight: bolder;
+	}
+}
