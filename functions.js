@@ -1,11 +1,30 @@
 function determineDeath() {
 	var estimate = 71;
-	var age = document.getElementsByName("age")[0].value;
+	var age = document.getElementsByName("age")[0];
+	
+	//grabs the value of age and tests to see its 0-150
+	//breaks out of function if it doesnt pass 
+	if (age.value < 0) {
+		age.value = 0;
+		window.alert("Your age cannot be below zero.");
+		return;
+	}
+	else if (age.value > 150) {
+		age.value = 150;
+		window.alert("Your age cannot be above 150.");
+		return;
+	}
+	
+	age = age.value;
+
+	
 	var yearsRemaining = estimate - age;
 	var immortal = age - estimate;
 	var livedDiv = "<div class='lived box'></div>";
 	var leftDiv = "<div class='left box'></div>";
 	var message = "";
+	
+	
 	
 	document.getElementsByClassName("question-container")[0].style.display="none";
 	
@@ -22,7 +41,7 @@ function determineDeath() {
 			$(".message").html(message);
 		}
 		else {
-			message = "Amazing you've lived "+immortal+" years over the world average";
+			message = "Amazing, you've lived "+immortal+" years over the world average.";
 			$(".message").html(message);
 		}
 	}
